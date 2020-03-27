@@ -3,7 +3,10 @@ Feature: Login
  I want to access to the portal
 Background: 
 	Given I have browser with SauceDemo Test 
-	When I enter username as 'standard_user' and I enter password as 'secret_sauce' 
+#	When I enter username as 'standard_user' and I enter password as 'secret_sauce' 
+When I enter login details from Excel "src/test/resources/resources/excel/swaglabs.xlsx" with SheetName "validcredentials" 
+	 
+	
 	
 Scenario: ValidCredentials 
 

@@ -13,6 +13,7 @@ public class AboutPage {
 	private  By careerloc = By.xpath("//a[@class='link'][contains(text(),'Careers')]");
 	
 	private WebDriver driver;
+	
 	public AboutPage(WebDriver driver)
 	{
 		this.driver = driver;

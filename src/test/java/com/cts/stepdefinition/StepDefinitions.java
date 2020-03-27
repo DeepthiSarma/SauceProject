@@ -1,46 +1,41 @@
 package com.cts.stepdefinition;
 
-import java.util.concurrent.TimeUnit;
-
+import java.io.IOException;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import com.cts.base.LaunchWebBrowser;
 import com.cts.pages.AboutPage;
-import com.cts.pages.CareerPage;
 import com.cts.pages.LoginPage;
 import com.cts.pages.ProductsPage;
-
+import com.cts.utils.ReadExcel;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-import com.cts.base.*;
 
 public class StepDefinitions {
 	WebDriver driver;
 
 	@Given("I have browser with SauceDemo Test")
 	public void i_have_browser_with_SauceDemo_Test() {
+		
+		//launch webdriver
 		LaunchWebBrowser.LaunchWebDriver("ch");
 		this.driver = LaunchWebBrowser.driver;
 	}
 	
-//	AboutPage about = new AboutPage(driver);
-//	LoginPage login = new LoginPage(driver);
-//	ProductsPage products = new ProductsPage(driver);
-
-	@When("I enter username as {string} and I enter password as {string}")
-	public void i_enter_username_as_and_I_enter_password_as(String username, String password) {
+	//reading details from excel
+	@When("I enter login details from Excel {string} with SheetName {string}")
+	public void i_enter_login_details_from_Excel_with_SheetName(String filedetails, String sheetname) throws IOException {
+		String str[][] = ReadExcel.getSheetIntoStringArray("src/test/resources/resources/excel/swaglabs.xlsx",
+				"validcredentials");
+		
 		LoginPage login = new LoginPage(driver);
-		// username
-		login.enterUsername(username);
-
+		
+		//username
+		login.enterUsername(str[0][0]);
 		// password
-		login.enterPassword(password);
-
+		login.enterPassword(str[0][1]);
 		// login
 		login.clickOnLogin();
 	}
@@ -49,9 +44,11 @@ public class StepDefinitions {
 	public void i_should_access_to_the_portal_with_title_as(String expectedTitle) {
 		LoginPage login = new LoginPage(driver);
 	
+		//get page title
 		String actualTitle = login.getTitle();
 		Assert.assertEquals(expectedTitle, actualTitle);
 		
+		//quitting browser
 		LaunchWebBrowser.trerminate();
 	}
 
@@ -59,6 +56,7 @@ public class StepDefinitions {
 	public void i_click_on_Menu_button() {
 		ProductsPage products = new ProductsPage(driver);
 		
+		// click on menu bar
 		products.clickOnMenuBar();
 	}
 
@@ -73,6 +71,7 @@ public class StepDefinitions {
 	@When("I click on About")
 	public void i_click_on_About() {
 		ProductsPage products = new ProductsPage(driver);
+		//click on products
 		products.clickOnAbout();
 	}
 
@@ -104,7 +103,6 @@ public class StepDefinitions {
 	@When("click on careers")
 	public void click_on_careers() {
 		AboutPage about = new AboutPage(driver);
-		
 		about.career(driver);
 	}
 
@@ -117,31 +115,4 @@ public class StepDefinitions {
 		LaunchWebBrowser.trerminate();
 	}
 
-		
-//	@When("I enter valid mail id as {string}")
-//	public void i_enter_valid_mail_id_as_and_click_on_send(String mailid) throws InterruptedException {
-//	    CareerPage.joinMailList(driver, "deepthi@gmail.com");
-//	    Thread.sleep(3000);
-//	    CareerPage.sendClick(driver);
-//		}
-//
-//	@Then("mail must be added")
-//	public void mail_must_be_added() {
-//		String actualthankyouMessage = CareerPage.joinedMessage(driver);
-//	String	expectedMsg= "THANK YOU FOR YOUR INTEREST";
-//		//Assert.assertEquals("THANK YOU FOR YOUR INTEREST",actualMessage);
-//		 Assert.assertTrue(expectedMsg, actualthankyouMessage.contains(expectedMsg));
-//	}
-//
-//	@When("I enter invalid mail id as {string}")
-//	public void i_enter_invalid_mail_id_as_and_click_on_send(String mailid) {
-//	   CareerPage.joinMailList(driver, "");
-//	   CareerPage.sendClick(driver);
-//	}
-//
-//	@Then("error message must be displayed")
-//	public void error_message_must_be_displayed() {
-//		String actualMessage = CareerPage.errorMessage(driver);
-//		Assert.assertTrue("Must be valid email",actualMessage.contains("be valid email"));
-//	}
 }

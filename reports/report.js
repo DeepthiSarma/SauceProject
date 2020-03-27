@@ -20,11 +20,11 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I enter username as \u0027standard_user\u0027 and I enter password as \u0027secret_sauce\u0027",
+  "name": "I enter login details from Excel \"src/test/resources/resources/excel/swaglabs.xlsx\" with SheetName \"validcredentials\"",
   "keyword": "When "
 });
 formatter.match({
-  "location": "com.cts.stepdefinition.StepDefinitions.i_enter_username_as_and_I_enter_password_as(java.lang.String,java.lang.String)"
+  "location": "com.cts.stepdefinition.StepDefinitions.i_enter_login_details_from_Excel_with_SheetName(java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -60,11 +60,11 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I enter username as \u0027standard_user\u0027 and I enter password as \u0027secret_sauce\u0027",
+  "name": "I enter login details from Excel \"src/test/resources/resources/excel/swaglabs.xlsx\" with SheetName \"validcredentials\"",
   "keyword": "When "
 });
 formatter.match({
-  "location": "com.cts.stepdefinition.StepDefinitions.i_enter_username_as_and_I_enter_password_as(java.lang.String,java.lang.String)"
+  "location": "com.cts.stepdefinition.StepDefinitions.i_enter_login_details_from_Excel_with_SheetName(java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -110,11 +110,11 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I enter username as \u0027standard_user\u0027 and I enter password as \u0027secret_sauce\u0027",
+  "name": "I enter login details from Excel \"src/test/resources/resources/excel/swaglabs.xlsx\" with SheetName \"validcredentials\"",
   "keyword": "When "
 });
 formatter.match({
-  "location": "com.cts.stepdefinition.StepDefinitions.i_enter_username_as_and_I_enter_password_as(java.lang.String,java.lang.String)"
+  "location": "com.cts.stepdefinition.StepDefinitions.i_enter_login_details_from_Excel_with_SheetName(java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -170,11 +170,11 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I enter username as \u0027standard_user\u0027 and I enter password as \u0027secret_sauce\u0027",
+  "name": "I enter login details from Excel \"src/test/resources/resources/excel/swaglabs.xlsx\" with SheetName \"validcredentials\"",
   "keyword": "When "
 });
 formatter.match({
-  "location": "com.cts.stepdefinition.StepDefinitions.i_enter_username_as_and_I_enter_password_as(java.lang.String,java.lang.String)"
+  "location": "com.cts.stepdefinition.StepDefinitions.i_enter_login_details_from_Excel_with_SheetName(java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -240,11 +240,11 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I enter username as \u0027standard_user\u0027 and I enter password as \u0027secret_sauce\u0027",
+  "name": "I enter login details from Excel \"src/test/resources/resources/excel/swaglabs.xlsx\" with SheetName \"validcredentials\"",
   "keyword": "When "
 });
 formatter.match({
-  "location": "com.cts.stepdefinition.StepDefinitions.i_enter_username_as_and_I_enter_password_as(java.lang.String,java.lang.String)"
+  "location": "com.cts.stepdefinition.StepDefinitions.i_enter_login_details_from_Excel_with_SheetName(java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
