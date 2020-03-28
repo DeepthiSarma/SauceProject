@@ -6,8 +6,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @CucumberOptions(features = { "src/main/resources/FEATURES/login.feature" },
-glue = {
-		"com/cts/stepdefinition" }, dryRun =false, plugin = {"html:reports/"})
+glue = {"com/cts/stepdefinition" }, dryRun =false, plugin = {"html:reports/","pretty"})
 @RunWith(Cucumber.class)
 
 public class RunnerTest{

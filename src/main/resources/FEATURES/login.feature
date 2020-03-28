@@ -4,7 +4,7 @@ Feature: Login
 Background: 
 	Given I have browser with SauceDemo Test 
 #	When I enter username as 'standard_user' and I enter password as 'secret_sauce' 
-When I enter login details from Excel "src/test/resources/resources/excel/swaglabs.xlsx" with SheetName "validcredentials" 
+	When I enter login details from Excel "src/test/resources/resources/excel/swaglabs.xlsx" with SheetName "validcredentials" 
 	 
 	
 	
@@ -36,15 +36,3 @@ Scenario: click on careers
 	And click on careers 
 	Then career page with title 'Careers | Sauce Labs' has to open 
 	
-#		Scenario: join mail list 
-#	When I click on Menu button 
-#	And I click on About
-#	And I enter valid mail id as 'deepthi@gmail.com'
-##	 And click on send 
-#	Then mail must be added 
-#	
-#Scenario: join mail list with empty mail
-#	When I click on Menu button 
-#	And I click on About
-#	And I enter invalid mail id as ''
-#	Then error message must be displayed

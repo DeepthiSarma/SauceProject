@@ -36,7 +36,7 @@ public class LoginPage {
 		return actualtitle;
 	}
 	
-	public  String errorMessage(WebDriver driver) {
+	public  String errorMessage() {
 		WebElement errele = driver.findElement(errorLoc);
 		String ele = errele.getText();
 		return ele;

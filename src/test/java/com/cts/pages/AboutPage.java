@@ -19,23 +19,23 @@ public class AboutPage {
 		this.driver = driver;
 	}
 	
-	public  void company(WebDriver driver) {
+	public  void company() {
 		Actions mouse = new Actions(driver);
 		mouse.moveToElement(driver.findElement(companyloc)).pause(1000).build().perform();
 	}
 
-	public  void waitForCareers(WebDriver driver) {
+	public  void waitForCareers() {
 
 		WebDriverWait wait = new WebDriverWait(driver, 50);
 		wait.until(ExpectedConditions.presenceOfElementLocated(waitForCareerloc));
 	}
-	public  void career(WebDriver driver) {
+	public  void career() {
 		
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",driver.findElement(careerloc));
 	}
 	
-	public  String getTitle(WebDriver driver) {
+	public  String getTitle() {
 		String actualtitle = driver.getTitle();
 		return actualtitle;
 	}

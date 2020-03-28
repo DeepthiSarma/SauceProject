@@ -63,8 +63,9 @@ public class StepDefinitions {
 	@Then("I side menu with about button has to appear")
 	public void i_side_menu_with_about_button_has_to_appear() {
 		ProductsPage products = new ProductsPage(driver);
-		
+		//waiting for about element 
 		products.WaitForAbout();
+		//quitting the scenario
 		LaunchWebBrowser.trerminate();
 	}
 
@@ -77,41 +78,48 @@ public class StepDefinitions {
 
 	@Then("application is redirected to page with title as {string}")
 	public void application_is_redirected_to_page_with_title_as(String expectedTitle) {
+		//creating a reference variable for ProductsPage
 		ProductsPage products = new ProductsPage(driver);
-		
+		//getting the title of the page
 		String actualTitle = products.getTitle();
+		//Asserting the title to the expected Title
 		Assert.assertEquals(expectedTitle, actualTitle);
+		//quitting the Scenario
 		LaunchWebBrowser.trerminate();	
 	}
 
 	@When("I click on Company")
 	public void i_click_on_Company() {
-		
+		//creating reference variable for About page
 		AboutPage about = new AboutPage(driver);
-		
-		about.company(driver);
+		//clicking on the company
+		about.company();
 	}
 
 	@Then("a list with About Us option must open")
 	public void a_list_with_careers_option_must_open() {
 		AboutPage about = new AboutPage(driver);
-		
-		about.waitForCareers(driver);
+		//wait for the careers element to be visible
+		about.waitForCareers();
+		//quit the scenario
 		LaunchWebBrowser.trerminate();
 	}
 
 	@When("click on careers")
 	public void click_on_careers() {
 		AboutPage about = new AboutPage(driver);
-		about.career(driver);
+		//going into careers page
+		about.career();
 	}
 
 	@Then("career page with title {string} has to open")
 	public void career_page_with_title_has_to_open(String expectedTitle) {
 		AboutPage about = new AboutPage(driver);
-		
-		String actualTitle = about.getTitle(driver);
+		//getting the title of the page
+		String actualTitle = about.getTitle();
+		//aserting the expected Title to the actual Title
 		Assert.assertEquals(expectedTitle, actualTitle);
+		//quit the scenario
 		LaunchWebBrowser.trerminate();
 	}
 

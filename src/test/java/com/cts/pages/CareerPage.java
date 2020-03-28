@@ -22,37 +22,14 @@ public class CareerPage {
 		this.driver = driver;
 	}
 
-	public   void clickOnSearchBar(WebDriver driver) {
+	public   void clickOnSearchBar() {
 		driver.findElement(searchloc).click();
 	}
 
-	public  void textBoxWait(WebDriver driver) {
+	public  void textBoxWait() {
 
 		WebDriverWait wait = new WebDriverWait(driver, 50);
 		wait.until(ExpectedConditions.presenceOfElementLocated(textBoxwaitloc));
 	}
-	
-//	public  void joinMailList(WebDriver driver, String mailid) {
-//		driver.findElement(joinMailloc).sendKeys(mailid);
-//	}
-//
-//	public  void sendClick(WebDriver driver) {
-//	
-//		JavascriptExecutor execute =(JavascriptExecutor)driver;
-//		execute.executeScript("arguments[0].click();", driver.findElement(sendloc));
-//	}
-//
-//	public  String joinedMessage(WebDriver driver) {
-//		WebElement joined = driver.findElement(joinedloc);
-//		String thankyou = joined.getText();
-//		return thankyou;
-//	}
-//	
-//	public  String errorMessage(WebDriver driver) {
-//		WebElement invalid = driver.findElement(errorMsgloc);
-//		String error = invalid.getText();
-//		return error;
-//	}
-
 }
 
