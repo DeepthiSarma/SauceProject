@@ -9,6 +9,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class LaunchWebBrowser {
 	public static WebDriver driver;
@@ -23,7 +24,7 @@ public class LaunchWebBrowser {
 		else if(browsername.equalsIgnoreCase("ie"))
 		{
 			System.setProperty("webdriver.ie.driver", "src/test/resources/driver/IEDriverServer.exe");
-			driver = new ChromeDriver();
+			driver = new InternetExplorerDriver();
 		}
 		else
 		{
